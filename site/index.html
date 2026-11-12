@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro para a prática de QA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="cabecalho">
+      <p class="rotulo">Prática de QA</p>
+      <h1>Cadastro de participantes</h1>
+      <p>Preencha somente com dados fictícios. Os registros permanecem nesta página até ela ser atualizada.</p>
+    </header>
+
+    <form id="cadastro" novalidate>
+      <div class="campo campo-inteiro">
+        <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+        <input id="nome" name="nome" type="text" autocomplete="off" data-cy="nome" aria-describedby="ajuda-nome">
+        <small id="ajuda-nome">Informe pelo menos 3 caracteres.</small>
+      </div>
+
+      <div class="campo">
+        <label for="nascimento">Data de nascimento <span aria-hidden="true">*</span></label>
+        <input id="nascimento" name="nascimento" type="date" data-cy="nascimento">
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" autocomplete="off" data-cy="email">
+      </div>
+
+      <div class="campo">
+        <label for="telefone">Telefone <span aria-hidden="true">*</span></label>
+        <input id="telefone" name="telefone" type="tel" autocomplete="off" data-cy="telefone" aria-describedby="ajuda-telefone">
+        <small id="ajuda-telefone">Use de 8 a 15 dígitos.</small>
+      </div>
+
+      <div class="campo">
+        <label for="pais">País <span aria-hidden="true">*</span></label>
+        <select id="pais" name="pais" data-cy="pais">
+          <option value="">Selecione</option>
+          <option value="BR">Brasil</option>
+          <option value="PT">Portugal</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="estado">Estado ou região <span aria-hidden="true">*</span></label>
+        <select id="estado" name="estado" data-cy="estado" disabled>
+          <option value="">Selecione</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="cidade">Cidade <span aria-hidden="true">*</span></label>
+        <select id="cidade" name="cidade" data-cy="cidade" disabled>
+          <option value="">Selecione</option>
+        </select>
+      </div>
+
+      <div class="acoes campo-inteiro">
+        <button type="submit" data-cy="enviar">Cadastrar participante</button>
+        <button type="button" class="secundario" data-cy="limpar">Limpar lista</button>
+      </div>
+    </form>
+
+    <p id="mensagem" data-cy="mensagem" role="status" aria-live="polite"></p>
+
+    <section class="registros" aria-labelledby="titulo-registros">
+      <h2 id="titulo-registros">Participantes cadastrados</h2>
+      <p id="vazio" data-cy="vazio">Ainda não há participantes cadastrados.</p>
+      <ul id="lista" data-cy="lista"></ul>
+    </section>
+  </main>
+</body>
+</html>

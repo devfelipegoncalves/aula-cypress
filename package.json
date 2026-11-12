@@ -1,0 +1,16 @@
+{
+  "name": "qa-basico-cypress",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Projeto prático para uma aula introdutória de QA com Cypress",
+  "scripts": {
+    "aula": "node scripts/executar-cypress.js open",
+    "verificar": "node scripts/executar-cypress.js run"
+  },
+  "allowScripts": {
+    "cypress": true
+  },
+  "devDependencies": {
+    "cypress": "^15.0.0"
+  }
+}
